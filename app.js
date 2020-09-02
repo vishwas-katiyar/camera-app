@@ -15,6 +15,8 @@ function cameraStart() {
         .then(function(stream) {
             track = stream.getTracks()[0];
             cameraView.srcObject = stream;
+            cameraView.width = window.innerWidth;
+            cameraView.height = window.innerHeight;
         })
         .catch(function(error) {
             console.error("Oops. Something is broken.", error);
